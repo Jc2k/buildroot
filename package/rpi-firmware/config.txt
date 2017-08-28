@@ -1,3 +1,5 @@
+disable_splash = 1
+
 # Please note that this is only a sample, we recommend you to change it to fit
 # your needs.
 # You should override this file using a post-build script.
@@ -13,8 +15,36 @@ kernel=zImage
 # If the text shown on the screen disappears off the edge, comment this out
 disable_overscan=1
 
-# How much memory in MB to assign to the GPU on Pi models having
-# 256, 512 or 1024 MB total memory
-gpu_mem_256=100
-gpu_mem_512=100
-gpu_mem_1024=100
+gpu_mem_256=128
+gpu_mem_512=256
+gpu_mem_1024=256
+overscan_scale=1
+
+# Disable low voltage warning when on 3.3v
+avoid_warnings=2
+
+# Enable safe shutdown
+dtoverlay=gpio-poweroff,gpiopin=22,active_low="y"
+
+# Disable onboard audio
+dtparam=audio=off
+
+# SD overclock (ONLY IF SD SUPPORTS IT)
+#dtoverlay=sdtweak,overclock_50=100
+
+dtoverlay=dpi18
+overscan_left=0
+overscan_right=0
+overscan_top=0
+overscan_bottom=0
+enable_dpi_lcd=1
+display_default_lcd=1
+display_rotate=2
+dpi_group=2
+dpi_mode=87
+
+# Enable 320x240 custom display mode
+framebuffer_width=320
+framebuffer_height=240
+dpi_output_format=24597 #rgb
+hdmi_timings=320 1 20 30 38 240 1 4 3 10 0 0 0 60 0 9600000 1
