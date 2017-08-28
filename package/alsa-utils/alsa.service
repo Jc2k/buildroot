@@ -1,0 +1,11 @@
+[Unit]
+Description=Run 'alsactl restore'
+After = sys-devices-platform-soc-20980000.usb-usb1-1\x2d1-1\x2d1.1-1\x2d1.1:1.0-sound-card0.device
+Requires = sys-devices-platform-soc-20980000.usb-usb1-1\x2d1-1\x2d1.1-1\x2d1.1:1.0-sound-card0.device
+
+[Service]
+Type=oneshot
+ExecStart=-/sbin/alsactl restore
+
+[Install]
+WantedBy = multi-user.target

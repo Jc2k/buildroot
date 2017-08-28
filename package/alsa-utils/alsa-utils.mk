@@ -81,4 +81,10 @@ define ALSA_UTILS_INSTALL_TARGET_CMDS
 	fi
 endef
 
+define ALSA_UTILS_INSTALL_INIT_SYSTEMD
+        $(INSTALL) -D package/alsa-utils/alsa.service $(TARGET_DIR)/usr/lib/systemd/system/alsa.service
+        mkdir -p $(TARGET_DIR)/usr/lib/systemd/system/multi-user.target.wants
+        ln -sf ../../../../../usr/lib/systemd/system/alsa.service $(TARGET_DIR)/usr/lib/systemd/system/multi-user.target.wants/alsa.service
+endef
+
 $(eval $(autotools-package))
