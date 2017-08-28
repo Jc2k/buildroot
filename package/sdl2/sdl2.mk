@@ -12,6 +12,15 @@ SDL2_LICENSE_FILES = COPYING.txt
 SDL2_INSTALL_STAGING = YES
 SDL2_CONFIG_SCRIPTS = sdl2-config
 
+define SDL2_RPI_FIXUP
+        $(SED) 's|/opt/vc/include|$(STAGING_DIR)/usr/include|g' $(@D)/configure
+        $(SED) 's|/opt/vc/lib|$(STAGING_DIR)/usr/lib|g' $(@D)/configure
+        $(SED) 's|raspberry-linux|linux|g' $(@D)/configure
+        $(SED) 's|-lbcm_host|-lbcm_host -lvchostif|g' $(@D)/configure
+endef
+
+SDL2_PRE_CONFIGURE_HOOKS += SDL2_RPI_FIXUP
+
 SDL2_CONF_OPTS += \
 	--disable-rpath \
 	--disable-arts \
