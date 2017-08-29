@@ -215,6 +215,8 @@ define WPA_SUPPLICANT_INSTALL_INIT_SYSTEMD
 		$(TARGET_DIR)/usr/lib/systemd/system/wpa_supplicant.service
 	$(INSTALL) -m 0644 -D $(@D)/$(WPA_SUPPLICANT_SUBDIR)/systemd/wpa_supplicant@.service \
 		$(TARGET_DIR)/usr/lib/systemd/system/wpa_supplicant@.service
+        $(INSTALL) -m 0644 -D package/wpa_supplicant/wpa_supplicant-wext@.service \
+                $(TARGET_DIR)/usr/lib/systemd/system/wpa_supplicant-wext@.service
 	$(INSTALL) -m 0644 -D $(@D)/$(WPA_SUPPLICANT_SUBDIR)/systemd/wpa_supplicant-nl80211@.service \
 		$(TARGET_DIR)/usr/lib/systemd/system/wpa_supplicant-nl80211@.service
 	$(INSTALL) -m 0644 -D $(@D)/$(WPA_SUPPLICANT_SUBDIR)/systemd/wpa_supplicant-wired@.service \
