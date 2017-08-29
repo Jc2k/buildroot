@@ -1,0 +1,15 @@
+[Unit]
+Description=First partition on disk
+DefaultDependencies=no
+Conflicts=umount.target
+Before=local-fs.target umount.target
+After=swap.target
+
+[Mount]
+What=/dev/mmcblk0p1
+Where=/mnt/mmcblk0p1
+Type=vfat
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,15 @@
+[Unit]
+Description=Game data and state
+DefaultDependencies=no
+Conflicts=umount.target
+Before=local-fs.target umount.target
+After=swap.target mnt-mmcblk0p1.mount
+
+[Mount]
+What=/mnt/mmcblk0p1/data/roms
+Where=/var/data/roms
+Type=none
+Options=bind
+
+[Install]
+WantedBy=multi-user.target
