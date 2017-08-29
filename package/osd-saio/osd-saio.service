@@ -1,0 +1,12 @@
+[Unit]
+Description=On-screen display data feed
+
+[Service]
+Type=simple
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /usr/bin/saio-osd.py
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

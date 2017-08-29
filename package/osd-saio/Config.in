@@ -1,0 +1,6 @@
+config BR2_PACKAGE_OSD_SAIO
+	bool "osd-saio"
+	help
+	  Libretro implementation of gambatte (GB, GBC)
+
+	  https://github.com/libretro/gambatte-libretro

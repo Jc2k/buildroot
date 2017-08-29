@@ -1,0 +1,12 @@
+[Unit]
+Description=On/Off switch
+
+[Service]
+Type=simple
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/powerswitch
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
