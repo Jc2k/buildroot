@@ -1,0 +1,1 @@
+ENV{ID_NET_DRIVER}=="plusb", NAME="gamelink0"

@@ -1,0 +1,5 @@
+[Match]
+Name=gamelink0
+
+[Network]
+LinkLocalAddressing=yes

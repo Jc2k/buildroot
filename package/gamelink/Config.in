@@ -1,0 +1,5 @@
+config BR2_PACKAGE_GAMELINK
+        bool "Gamelink"
+
+        help
+          Coordinates gamelink and retroplay master/server status
