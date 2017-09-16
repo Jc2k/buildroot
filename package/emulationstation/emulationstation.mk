@@ -3,11 +3,11 @@
 # Emulation Station
 #
 ################################################################################
-EMULATIONSTATION_VERSION = 5725876736e0b611280dbbafd5d944b9739b209d
+EMULATIONSTATION_VERSION = 05086b11594d8852e06bd8c10847e0fa6faf5e3f
 EMULATIONSTATION_SITE = https://github.com/Jc2k/emulationstation
 EMULATIONSTATION_SITE_METHOD = git
 EMULATIONSTATION_LICENSE = MIT
-EMULATIONSTATION_DEPENDENCIES = sdl2 sdl2_mixer boost libfreeimage freetype eigen alsa-lib libgles openssl
+EMULATIONSTATION_DEPENDENCIES = sdl2 sdl2_mixer boost libfreeimage freetype eigen alsa-lib libgles lua openssl
 EMULATIONSTATION_INSTALL_STAGING = no
 
 
